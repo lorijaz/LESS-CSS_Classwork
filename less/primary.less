@@ -1,0 +1,170 @@
+/*
+	Author: Lori Herkamp
+	Date:   November 13, 2016
+	Filename: primary.css
+*/
+//font variables
+@mainfont: 12pt;
+@mainhead: @mainfont + 8;
+@subheadfont: @mainfont + 10;
+
+
+//color variables
+@maincolor: #78B494;
+@firstcolor: #323875;
+@secondcolor: #28784D;
+@thirdcolor: #0F5A32;
+@neutral: #fff;
+
+/* As hex codes */
+/* Palette URL: http://paletton.com/#uid=53t0u0kllllaFw0g0qFqFg0w0aF */
+
+@color-primary-0: #28546C;	/* Main Primary color */
+@color-primary-1: #6F90A2;
+@color-primary-2: #477187;
+@color-primary-3: #113B51;
+@color-primary-4: #032436;
+
+@color-secondary-1-0: #323875;	/* Main Secondary color (1) */
+@color-secondary-1-1: #7D82B0;
+@color-secondary-1-2: #535993;
+@color-secondary-1-3: #191F58;
+@color-secondary-1-4: #080D3B;
+
+@color-secondary-2-0: #28784D;	/* Main Secondary color (2) */
+@color-secondary-2-1: #78B494;
+@color-secondary-2-2: #4B966E;
+@color-secondary-2-3: #0F5A32;
+@color-secondary-2-4: #003C1C;
+
+.gradient (@startColor: white, @endColor: @firstcolor) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+	}
+
+
+//actual styles
+
+header{
+	width: 100%;
+	background-color: white;
+	padding: 3px;
+	
+
+			p{
+			color: @maincolor;
+			text-align: center;
+			font-size: @subheadfont;
+			}
+		
+			img#header {
+				width: 100%;
+				}
+    }
+
+ 
+body {
+	background-color: @maincolor;
+	font-family: 'Oswald', sans-serif;
+	}
+	
+// Nav styles- nested rules
+nav {
+	width: 20%;
+	float: left;
+	
+	
+	ul {
+		padding: 0 1px 1px;
+		margin-left: 2px;
+		width: 15em;
+		
+		li {
+			list-style: none;
+			margin: 3px;
+			text-align: left;
+			
+			a {
+				display: block;
+				padding: 0.25em 0.5em 0.25em 0.75em;
+				background: @thirdcolor;
+				text-decoration: none;
+				
+				&:link {
+					color: black; 
+				}
+				
+				&:visited {
+					color: white; 
+				}
+				
+				&:hover {
+					color: #FFF;
+					background: @secondcolor;
+				}
+			}
+		}
+	}
+}
+	
+
+article {
+	width: 55%;
+	float: left;
+	padding: 5px;
+	margin -top: 15px;
+	background-color: @firstcolor;
+	color: white;
+	text-align: center;
+	font-size: @mainfont;
+	}
+
+h1 {
+	font-size: @mainhead;
+	}
+
+aside {
+	width: 20%;
+	float: left;
+	padding: 5px;
+	margin: 15px;
+	text-align: center;
+	color: white;
+	background-color: @thirdcolor;
+	}
+
+
+	footer {
+		width: 100%;
+		color: white;
+		margin: 5px;
+		text-align: center;
+		background: @firstcolor;
+		.gradient;
+		.border-radius(10px);
+		float: left;
+	}
+
+	
+	main {
+	@media screen {
+			width: 100%;
+		}
+	@media screen and (max-width: 640px) {
+			width: 50%;
+		}
+		
+	@media screen and (max-width: 480px) {
+			width: 100%;
+		}
+}
